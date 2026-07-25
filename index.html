@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>शुभ उद्घाटन समारोह - सादर आमंत्रण</title>
+    
+    <!-- Meta tags for SEO & Rich Preview -->
+    <meta name="description" content="स्वरूप नारायण सर्विस प्रोवाइडर के शुभ उद्घाटन समारोह का सादर आमंत्रण। दिनांक: 02 अगस्त 2026 (रविवार)">
+    <meta name="theme-color" content="#4A0E17">
+    
+    <!-- Google Fonts for Traditional Indian Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Marcellus&family=Poppins:wght@300;400;600&family=Rozha+One&family=Yatra+One&display=swap" rel="stylesheet">
+    
+    <!-- Style Sheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Audio Element for Traditional Shehnai Background Music (Fallback) -->
+    <audio id="bg-music" loop preload="auto">
+        <source src="https://archive.org/download/dli.akashvani.sangeet.24/2%20Poorvi%20Dhun.mp3" type="audio/mp3">
+    </audio>
+
+    <!-- Hidden YouTube Player for Celebration Music -->
+    <div id="yt-player" style="display: none; position: absolute; visibility: hidden; width: 0; height: 0; pointer-events: none;"></div>
+
+    <div id="invitation-app">
+        <!-- 1. SPLASH SCREEN (Envelope / Wax Seal Entrance) -->
+        <div id="splash-screen" class="active">
+            <div class="envelope-card">
+                <div class="envelope-corner top-left"></div>
+                <div class="envelope-corner top-right"></div>
+                <div class="envelope-corner bottom-left"></div>
+                <div class="envelope-corner bottom-right"></div>
+                
+                <div class="envelope-content">
+                    <div class="ganesha-icon">
+                        <!-- Lord Ganesha Simple SVG -->
+                        <svg viewBox="0 0 100 120" width="80" height="96" class="gold-svg">
+                            <path d="M50 15 C 40 15, 30 20, 27 30 C 25 35, 28 42, 33 45 C 38 48, 43 45, 45 42 C 47 38, 48 32, 50 32 C 52 32, 53 38, 55 42 C 57 45, 62 48, 67 45 C 72 42, 75 35, 73 30 C 70 20, 60 15, 50 15 Z" fill="none" stroke="currentColor" stroke-width="2" />
+                            <path d="M50 32 L 50 70 C 50 85, 35 90, 35 100 C 35 105, 40 108, 50 108 C 60 108, 65 105, 65 100 C 65 92, 50 92, 50 85" fill="none" stroke="currentColor" stroke-width="2" />
+                            <path d="M42 48 C 38 52, 35 58, 35 65 C 35 75, 42 80, 50 80 C 58 80, 65 75, 65 65 C 65 58, 62 52, 58 48" fill="none" stroke="currentColor" stroke-width="2" />
+                            <circle cx="43" cy="38" r="1.5" fill="currentColor"/>
+                            <circle cx="57" cy="38" r="1.5" fill="currentColor"/>
+                            <path d="M47 30 Q 50 24 53 30" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M48 24 L 52 24" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <!-- Laddoo in plate -->
+                            <path d="M25 80 Q 28 85 35 83" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                            <circle cx="28" cy="78" r="2" fill="currentColor"/>
+                            <circle cx="31" cy="76" r="2.5" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    
+                    <h2 class="shloka">।। श्री गणेशाय नमः ।।</h2>
+                    <h1 class="splash-title">सादर आमंत्रण</h1>
+                    <p class="splash-subtitle">शुभ उद्घाटन समारोह</p>
+                    
+                    <button id="open-btn" class="gold-button">
+                        <span class="btn-shine"></span>
+                        <span class="btn-text">आमंत्रण पत्र खोलें</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. CINEMATIC CONTAINER -->
+        <div id="cinematic-container">
+            <!-- Falling Petals & Sparkles Canvas -->
+            <canvas id="petal-canvas"></canvas>
+
+            <!-- Ambient Light rays overlay -->
+            <div class="divine-light-beams"></div>
+
+            <!-- Hanging marigold garlands from top -->
+            <div class="garlands-container">
+                <div class="garland shadow"></div>
+                <div class="garland"></div>
+            </div>
+
+            <!-- Golden Temple Doors (SVG doors sliding left/right) -->
+            <div class="temple-doors-wrapper">
+                <!-- Left Door half -->
+                <div class="temple-door left-door">
+                    <svg viewBox="0 0 250 600" preserveAspectRatio="none" class="door-svg">
+                        <defs>
+                            <linearGradient id="gold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#D4AF37" />
+                                <stop offset="50%" stop-color="#AA7C11" />
+                                <stop offset="100%" stop-color="#FFDF73" />
+                            </linearGradient>
+                            <pattern id="door-mesh" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                                <path d="M 10 0 L 20 10 L 10 20 L 0 10 Z" fill="none" stroke="#AA7C11" stroke-width="0.5" opacity="0.3"/>
+                            </pattern>
+                        </defs>
+                        <!-- Door base structure -->
+                        <rect width="250" height="600" fill="#4A0E17" stroke="url(#gold-grad)" stroke-width="8"/>
+                        <!-- Decorative mesh pattern -->
+                        <rect width="250" height="600" fill="url(#door-mesh)"/>
+                        
+                        <!-- Arch Frame border -->
+                        <path d="M 240 590 L 240 150 Q 240 20, 10 20 L 10 590" fill="none" stroke="url(#gold-grad)" stroke-width="6" stroke-dasharray="10 5"/>
+                        <path d="M 230 590 L 230 160 Q 230 40, 20 40 L 20 590" fill="none" stroke="url(#gold-grad)" stroke-width="3"/>
+                        
+                        <!-- Traditional floral panels -->
+                        <rect x="35" y="80" width="180" height="60" fill="none" stroke="url(#gold-grad)" stroke-width="2" rx="10"/>
+                        <circle cx="125" cy="110" r="15" fill="none" stroke="url(#gold-grad)" stroke-width="2"/>
+                        <path d="M 125 90 L 125 130 M 105 110 L 145 110" stroke="url(#gold-grad)" stroke-width="1.5"/>
+
+                        <!-- Center panels with traditional motifs -->
+                        <g transform="translate(45, 200)">
+                            <rect width="160" height="320" fill="none" stroke="url(#gold-grad)" stroke-width="3" rx="8"/>
+                            <!-- Inner Lotus Design -->
+                            <path d="M 80 180 C 60 170, 50 150, 80 120 C 110 150, 100 170, 80 180 Z" fill="url(#gold-grad)" opacity="0.8"/>
+                            <path d="M 80 180 C 40 175, 40 140, 80 120 C 120 140, 120 175, 80 180 Z" fill="none" stroke="url(#gold-grad)" stroke-width="1.5"/>
+                            <path d="M 80 180 C 70 190, 90 190, 80 180" fill="url(#gold-grad)"/>
+                            <!-- Swastik or auspicious mandala -->
+                            <circle cx="80" cy="70" r="25" fill="none" stroke="url(#gold-grad)" stroke-width="1.5"/>
+                            <path d="M 80 50 L 80 90 M 60 70 L 100 70" stroke="url(#gold-grad)" stroke-width="2"/>
+                            <path d="M 80 50 L 95 50 M 80 90 L 65 90 M 60 70 L 60 55 M 100 70 L 100 85" stroke="url(#gold-grad)" stroke-width="2" stroke-linecap="round"/>
+                        </g>
+
+                        <!-- Hanging Bells SVG -->
+                        <g transform="translate(125, 40)" class="hanging-bell">
+                            <line x1="0" y1="0" x2="0" y2="20" stroke="url(#gold-grad)" stroke-width="2"/>
+                            <path d="M -10 20 Q 0 10 10 20 L 12 35 Q 0 38 -12 35 Z" fill="url(#gold-grad)"/>
+                            <circle cx="0" cy="38" r="3" fill="#FFF"/>
+                        </g>
+                        <g transform="translate(60, 60)" class="hanging-bell">
+                            <line x1="0" y1="0" x2="0" y2="25" stroke="url(#gold-grad)" stroke-width="1.5"/>
+                            <path d="M -7 25 Q 0 17 7 25 L 9 37 Q 0 40 -9 37 Z" fill="url(#gold-grad)"/>
+                            <circle cx="0" cy="40" r="2" fill="#FFF"/>
+                        </g>
+                        <g transform="translate(190, 60)" class="hanging-bell">
+                            <line x1="0" y1="0" x2="0" y2="25" stroke="url(#gold-grad)" stroke-width="1.5"/>
+                            <path d="M -7 25 Q 0 17 7 25 L 9 37 Q 0 40 -9 37 Z" fill="url(#gold-grad)"/>
+                            <circle cx="0" cy="40" r="2" fill="#FFF"/>
+                        </g>
+
+                        <!-- Door Handle -->
+                        <circle cx="235" cy="300" r="14" fill="url(#gold-grad)"/>
+                        <circle cx="235" cy="300" r="8" fill="#4A0E17"/>
+                        <path d="M 235 300 Q 215 310 220 330 Q 225 350 235 345 L 235 300" fill="url(#gold-grad)" stroke="#AA7C11" stroke-width="1"/>
+                    </svg>
+                </div>
+
+                <!-- Right Door half -->
+                <div class="temple-door right-door">
+                    <svg viewBox="0 0 250 600" preserveAspectRatio="none" class="door-svg">
+                        <!-- Door base structure -->
+                        <rect width="250" height="600" fill="#4A0E17" stroke="url(#gold-grad)" stroke-width="8"/>
+                        <rect width="250" height="600" fill="url(#door-mesh)"/>
+                        
+                        <!-- Arch Frame border -->
+                        <path d="M 10 590 L 10 150 Q 10 20, 240 20 L 240 590" fill="none" stroke="url(#gold-grad)" stroke-width="6" stroke-dasharray="10 5"/>
+                        <path d="M 20 590 L 20 160 Q 20 40, 230 40 L 230 590" fill="none" stroke="url(#gold-grad)" stroke-width="3"/>
+                        
+                        <!-- Traditional floral panels -->
+                        <rect x="35" y="80" width="180" height="60" fill="none" stroke="url(#gold-grad)" stroke-width="2" rx="10"/>
+                        <circle cx="125" cy="110" r="15" fill="none" stroke="url(#gold-grad)" stroke-width="2"/>
+                        <path d="M 125 90 L 125 130 M 105 110 L 145 110" stroke="url(#gold-grad)" stroke-width="1.5"/>
+
+                        <!-- Center panels with traditional motifs -->
+                        <g transform="translate(45, 200)">
+                            <rect width="160" height="320" fill="none" stroke="url(#gold-grad)" stroke-width="3" rx="8"/>
+                            <!-- Inner Lotus Design -->
+                            <path d="M 80 180 C 60 170, 50 150, 80 120 C 110 150, 100 170, 80 180 Z" fill="url(#gold-grad)" opacity="0.8"/>
+                            <path d="M 80 180 C 40 175, 40 140, 80 120 C 120 140, 120 175, 80 180 Z" fill="none" stroke="url(#gold-grad)" stroke-width="1.5"/>
+                            <path d="M 80 180 C 70 190, 90 190, 80 180" fill="url(#gold-grad)"/>
+                            <!-- Swastik or auspicious mandala -->
+                            <circle cx="80" cy="70" r="25" fill="none" stroke="url(#gold-grad)" stroke-width="1.5"/>
+                            <path d="M 80 50 L 80 90 M 60 70 L 100 70" stroke="url(#gold-grad)" stroke-width="2"/>
+                            <path d="M 80 50 L 95 50 M 80 90 L 65 90 M 60 70 L 60 55 M 100 70 L 100 85" stroke="url(#gold-grad)" stroke-width="2" stroke-linecap="round"/>
+                        </g>
+
+                        <!-- Hanging Bells SVG -->
+                        <g transform="translate(125, 40)" class="hanging-bell">
+                            <line x1="0" y1="0" x2="0" y2="20" stroke="url(#gold-grad)" stroke-width="2"/>
+                            <path d="M -10 20 Q 0 10 10 20 L 12 35 Q 0 38 -12 35 Z" fill="url(#gold-grad)"/>
+                            <circle cx="0" cy="38" r="3" fill="#FFF"/>
+                        </g>
+                        <g transform="translate(60, 60)" class="hanging-bell">
+                            <line x1="0" y1="0" x2="0" y2="25" stroke="url(#gold-grad)" stroke-width="1.5"/>
+                            <path d="M -7 25 Q 0 17 7 25 L 9 37 Q 0 40 -9 37 Z" fill="url(#gold-grad)"/>
+                            <circle cx="0" cy="40" r="2" fill="#FFF"/>
+                        </g>
+                        <g transform="translate(190, 60)" class="hanging-bell">
+                            <line x1="0" y1="0" x2="0" y2="25" stroke="url(#gold-grad)" stroke-width="1.5"/>
+                            <path d="M -7 25 Q 0 17 7 25 L 9 37 Q 0 40 -9 37 Z" fill="url(#gold-grad)"/>
+                            <circle cx="0" cy="40" r="2" fill="#FFF"/>
+                        </g>
+
+                        <!-- Door Handle -->
+                        <circle cx="15" cy="300" r="14" fill="url(#gold-grad)"/>
+                        <circle cx="15" cy="300" r="8" fill="#4A0E17"/>
+                        <path d="M 15 300 Q 35 310 30 330 Q 25 350 15 345 L 15 300" fill="url(#gold-grad)" stroke="#AA7C11" stroke-width="1"/>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- SCENES (Crossfading slides simulating cinematic scenes) -->
+            <div id="scenes-wrapper">
+                
+                <!-- SCENE 1: Welcome & Ganesha Invocation -->
+                <div class="scene active" id="scene-1">
+                    <div class="card-glass-frame">
+                        <div class="shri-ganesh">।। श्री गणेशाय नमः ।।</div>
+                        
+                        <div class="lotus-motif">
+                            <svg viewBox="0 0 100 50" width="80" class="gold-svg">
+                                <path d="M 50 45 C 50 45, 30 30, 30 20 C 30 10, 45 5, 50 15 C 55 5, 70 10, 70 20 C 70 30, 50 45, 50 45 Z" fill="currentColor"/>
+                                <path d="M 50 45 C 50 45, 15 35, 15 25 C 15 15, 30 10, 35 22 C 30 28, 50 45, 50 45 Z" fill="currentColor" opacity="0.8"/>
+                                <path d="M 50 45 C 50 45, 85 35, 85 25 C 85 15, 70 10, 65 22 C 70 28, 50 45, 50 45 Z" fill="currentColor" opacity="0.8"/>
+                                <path d="M 50 45 Q 35 48 20 42 Q 10 38 12 32 C 15 35, 50 45, 50 45 Z" fill="currentColor" opacity="0.6"/>
+                                <path d="M 50 45 Q 65 48 80 42 Q 90 38 88 32 C 85 35, 50 45, 50 45 Z" fill="currentColor" opacity="0.6"/>
+                            </svg>
+                        </div>
+                        
+                        <h1 class="main-invite-title shine-text">सादर आमंत्रण</h1>
+                        
+                        <div class="firm-name">स्वरूप नारायण सर्विस प्रोवाइडर</div>
+                        
+                        <div class="inauguration-announce">के शुभ उद्घाटन समारोह में</div>
+                        
+                        <p class="invite-msg">
+                            आप एवं आपके परिवार की स्नेहिल उपस्थिति हमारे लिए गौरव एवं सौभाग्य का विषय होगी।
+                        </p>
+                        
+                        <div class="divider-gold-filigree">
+                            <span class="filigree-wing left"></span>
+                            <span class="filigree-center">◆</span>
+                            <span class="filigree-wing right"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SCENE 2: Event Details -->
+                <div class="scene" id="scene-2">
+                    <div class="card-glass-frame scroll-panel">
+                        <h2 class="scene-title">समारोह विवरण</h2>
+                        
+                        <div class="details-list">
+                            <!-- Date Detail -->
+                            <div class="detail-item fade-up-delay-1">
+                                <div class="detail-icon">📅</div>
+                                <div class="detail-content">
+                                    <span class="label">दिनांक</span>
+                                    <span class="val boldHighlight">02 अगस्त 2026</span>
+                                    <span class="sub-val">(रविवार)</span>
+                                </div>
+                            </div>
+                            
+                            <div class="gold-line-divider"></div>
+                            
+                            <!-- Time Detail -->
+                            <div class="detail-item fade-up-delay-2">
+                                <div class="detail-icon">🕛</div>
+                                <div class="detail-content">
+                                    <span class="label">समय</span>
+                                    <span class="val">दोपहर 12:00 बजे से 4:00 बजे तक</span>
+                                </div>
+                            </div>
+                            
+                            <div class="gold-line-divider"></div>
+                            
+                            <!-- Location Detail -->
+                            <div class="detail-item fade-up-delay-3">
+                                <div class="detail-icon">📍</div>
+                                <div class="detail-content">
+                                    <span class="label">स्थान</span>
+                                    <span class="val boldHighlight">सी-21, शॉप नं. 15</span>
+                                    <span class="val">कर्णावत पान शॉप के पीछे</span>
+                                    <span class="val">नानाखेड़ा, उज्जैन</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Map Interactive Button -->
+                        <div class="map-action">
+                            <a href="https://maps.google.com/?q=Nanakheda+Ujjain" target="_blank" class="gold-border-button">
+                                <span>गूगल मैप पर देखें</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SCENE 3: Final Blessings & Closing -->
+                <div class="scene" id="scene-3">
+                    <div class="card-glass-frame closing-panel">
+                        
+                        <!-- Luxurious Golden Emblem Background with Business Name -->
+                        <div class="emblem-container">
+                            <img src="assets/royal_emblem.png" class="royal-emblem-img" alt="Royal Gold Emblem">
+                            <div class="emblem-overlay-text">
+                                <span>स्वरूप नारायण</span>
+                                <span class="sub-emblem">सर्विस प्रोवाइडर</span>
+                            </div>
+                        </div>
+                        
+                        <p class="blessing-msg text-glow">
+                            आपकी शुभ उपस्थिति ही हमारे समारोह की शोभा होगी।
+                        </p>
+
+                        <!-- Traditional Diya Area -->
+                        <div class="diya-display">
+                            <div class="diya-glow"></div>
+                            <img src="assets/brass_diya.png" class="diya-image" alt="Brass Diya">
+                            <!-- Flickering CSS Flame -->
+                            <div class="diya-flame">
+                                <div class="flame-core"></div>
+                                <div class="flame-glow"></div>
+                            </div>
+                        </div>
+
+                        <div class="namaste-symbol">🙏</div>
+                        
+                        <div class="cordial-invite">सादर आमंत्रित</div>
+                        
+                        <div class="flower-shower-msg">पुष्प वर्षा एवं स्नेहाशीष</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- CONTROLS OVERLAYS -->
+            <div class="cinematic-hud">
+                <!-- Music Control -->
+                <button id="music-toggle" class="hud-btn audio-playing" title="Mute/Unmute Music">
+                    <span class="icon-volume-on">🔊</span>
+                    <span class="icon-volume-off">🔇</span>
+                </button>
+                
+                <!-- Timeline Progress Bar -->
+                <div class="timeline-indicator">
+                    <div id="timeline-progress"></div>
+                </div>
+
+                <!-- Control Play/Pause -->
+                <button id="play-pause-toggle" class="hud-btn playing" title="Play/Pause Timeline">
+                    <span class="icon-pause">⏸</span>
+                    <span class="icon-play">▶</span>
+                </button>
+
+                <!-- Navigation Dot Indicators -->
+                <div class="scene-dots">
+                    <span class="dot active" data-scene="0"></span>
+                    <span class="dot" data-scene="1"></span>
+                    <span class="dot" data-scene="2"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script File -->
+    <script src="script.js"></script>
+</body>
+</html>

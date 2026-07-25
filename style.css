@@ -1,0 +1,930 @@
+/* CSS Document: Royal Indian Invitation Aesthetics */
+
+:root {
+    --bg-maroon: #4A0E17;
+    --royal-red: #8B0000;
+    --gold-primary: #D4AF37;
+    --gold-dark: #AA7C11;
+    --gold-light: #FFDF73;
+    --ivory-white: #FFFFF0;
+    --emerald-green: #097969;
+    --shadow-gold: rgba(212, 175, 55, 0.4);
+    --glass-bg: rgba(74, 14, 23, 0.78);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #1a0305;
+    font-family: 'Poppins', sans-serif;
+    color: var(--ivory-white);
+}
+
+/* App Wrapper */
+#invitation-app {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle, #2d0408 0%, #100002 100%);
+}
+
+/* 1. SPLASH SCREEN / ENVELOPE */
+#splash-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle, #3d070f 0%, #150104 100%);
+    transition: opacity 1.2s cubic-bezier(0.77, 0, 0.175, 1), visibility 1.2s;
+}
+
+#splash-screen.fade-out {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.envelope-card {
+    position: relative;
+    width: 90%;
+    max-width: 450px;
+    height: 80vh;
+    max-height: 600px;
+    background-color: var(--bg-maroon);
+    background-image: url('assets/royal_background.png');
+    background-size: cover;
+    background-position: center;
+    border: 4px double var(--gold-primary);
+    border-radius: 12px;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.8), 0 0 30px var(--shadow-gold);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    overflow: hidden;
+}
+
+/* Envelope Corners filigree decoration */
+.envelope-corner {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border: 2px solid var(--gold-primary);
+    opacity: 0.7;
+}
+.envelope-corner.top-left { top: 15px; left: 15px; border-right: none; border-bottom: none; border-top-left-radius: 8px;}
+.envelope-corner.top-right { top: 15px; right: 15px; border-left: none; border-bottom: none; border-top-right-radius: 8px;}
+.envelope-corner.bottom-left { bottom: 15px; left: 15px; border-right: none; border-top: none; border-bottom-left-radius: 8px;}
+.envelope-corner.bottom-right { bottom: 15px; right: 15px; border-left: none; border-top: none; border-bottom-right-radius: 8px;}
+
+.envelope-content {
+    text-align: center;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.ganesha-icon {
+    margin-bottom: 25px;
+    color: var(--gold-light);
+    filter: drop-shadow(0 0 10px var(--shadow-gold));
+    animation: pulseGlow 3s infinite ease-in-out;
+}
+
+.shloka {
+    font-family: 'Yatra One', cursive;
+    color: var(--gold-light);
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.splash-title {
+    font-family: 'Rozha One', serif;
+    font-size: 2.8rem;
+    color: var(--ivory-white);
+    background: linear-gradient(to right, #FFF 20%, var(--gold-light) 40%, var(--gold-primary) 60%, #FFF 80%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: goldShine 4s infinite linear;
+    margin-bottom: 10px;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.splash-subtitle {
+    font-family: 'Yatra One', cursive;
+    color: var(--gold-primary);
+    font-size: 1.4rem;
+    margin-bottom: 50px;
+    letter-spacing: 1px;
+}
+
+/* Gold Button Design */
+.gold-button {
+    position: relative;
+    padding: 15px 40px;
+    font-family: 'Yatra One', cursive;
+    font-size: 1.2rem;
+    color: #4A0E17;
+    background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-primary) 50%, var(--gold-dark) 100%);
+    border: 2px solid var(--gold-light);
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4), 0 0 15px var(--shadow-gold);
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.gold-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5), 0 0 25px var(--gold-light);
+}
+
+.gold-button:active {
+    transform: translateY(1px);
+}
+
+.btn-shine {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0) 100%);
+    transform: skewX(-25deg);
+    animation: buttonShine 2.5s infinite ease-in-out;
+}
+
+/* 2. CINEMATIC CONTAINER */
+#cinematic-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('assets/royal_background.png');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Canvas Overlay */
+#petal-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    pointer-events: none;
+}
+
+/* Beams of Divine Light */
+.divine-light-beams {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 0%, rgba(255, 235, 150, 0.15) 0%, rgba(255, 235, 150, 0.05) 40%, transparent 80%);
+    pointer-events: none;
+    z-index: 2;
+    mix-blend-mode: screen;
+}
+
+/* Hanging Marigold Garlands */
+.garlands-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    z-index: 15;
+    pointer-events: none;
+}
+
+.garland {
+    position: absolute;
+    top: -5px;
+    left: 0;
+    width: 100%;
+    height: 35px;
+    background-image: radial-gradient(circle, #FFA500 40%, #FF8C00 70%, transparent 72%);
+    background-size: 24px 24px;
+    background-repeat: repeat-x;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+}
+.garland::after {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 12px;
+    width: 100%;
+    height: 20px;
+    background-image: radial-gradient(circle, #FFD700 35%, #FFA500 65%, transparent 68%);
+    background-size: 24px 24px;
+    background-repeat: repeat-x;
+}
+.garland.shadow {
+    top: -3px;
+    filter: blur(4px) brightness(0);
+    opacity: 0.5;
+}
+
+/* SVG Doors Sliding Left and Right */
+.temple-doors-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    z-index: 25;
+    pointer-events: none;
+}
+
+.temple-door {
+    width: 50%;
+    height: 100%;
+    transition: transform 3s cubic-bezier(0.77, 0, 0.175, 1);
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.9);
+}
+
+.left-door {
+    transform-origin: left center;
+    border-right: 2px solid var(--gold-primary);
+}
+
+.right-door {
+    transform-origin: right center;
+    border-left: 2px solid var(--gold-primary);
+}
+
+/* Door States triggered by JS class adding */
+#cinematic-container.doors-open .left-door {
+    transform: translateX(-100%) rotateY(-20deg);
+}
+
+#cinematic-container.doors-open .right-door {
+    transform: translateX(100%) rotateY(20deg);
+}
+
+.door-svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Hanging Bells Oscillation */
+.hanging-bell {
+    transform-origin: 0% 0%;
+    animation: bellSway 4s infinite ease-in-out;
+}
+.hanging-bell:nth-child(2) { animation-delay: 0.5s; }
+.hanging-bell:nth-child(3) { animation-delay: 1s; }
+
+/* 3. SCENES WRAPPER & SLIDES */
+#scenes-wrapper {
+    position: relative;
+    width: 90%;
+    max-width: 650px;
+    height: 80vh;
+    max-height: 550px;
+    z-index: 8;
+}
+
+.scene {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.95);
+    transition: opacity 1.5s ease, transform 1.5s cubic-bezier(0.16, 1, 0.3, 1), visibility 1.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.scene.active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+/* Glassmorphism Card Frame */
+.card-glass-frame {
+    width: 100%;
+    height: 100%;
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 3px double var(--gold-primary);
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7), inset 0 0 20px rgba(212, 175, 55, 0.15);
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Ornate corners inside cards */
+.card-glass-frame::before, .card-glass-frame::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--gold-primary);
+    opacity: 0.5;
+}
+.card-glass-frame::before { top: 12px; left: 12px; border-right: none; border-bottom: none; }
+.card-glass-frame::after { bottom: 12px; right: 12px; border-left: none; border-top: none; }
+
+/* 3.1. SCENE 1 ELEMENTS */
+.shri-ganesh {
+    font-family: 'Yatra One', cursive;
+    color: var(--gold-light);
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    animation: pulseText 2s infinite ease-in-out;
+}
+
+.lotus-motif {
+    color: var(--gold-primary);
+    filter: drop-shadow(0 0 5px var(--shadow-gold));
+}
+
+.main-invite-title {
+    font-family: 'Rozha One', serif;
+    font-size: 3.2rem;
+    color: var(--ivory-white);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+}
+
+.firm-name {
+    font-family: 'Yatra One', cursive;
+    font-size: 2.2rem;
+    background: linear-gradient(135deg, #FFE066 0%, #F5B041 50%, #C0392B 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+    font-weight: 600;
+    margin: 10px 0;
+    letter-spacing: 0.5px;
+}
+
+.inauguration-announce {
+    font-family: 'Rozha One', serif;
+    font-size: 1.5rem;
+    color: var(--gold-light);
+    margin-bottom: 5px;
+}
+
+.invite-msg {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 90%;
+    color: var(--ivory-white);
+    opacity: 0.9;
+}
+
+/* Filigree Divider */
+.divider-gold-filigree {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    margin-top: 10px;
+}
+
+.filigree-wing {
+    flex-grow: 1;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold-primary));
+}
+.filigree-wing.right {
+    background: linear-gradient(to left, transparent, var(--gold-primary));
+}
+
+.filigree-center {
+    color: var(--gold-primary);
+    margin: 0 10px;
+    font-size: 0.8rem;
+}
+
+/* 3.2. SCENE 2 ELEMENTS: DETAILS */
+.scene-title {
+    font-family: 'Yatra One', cursive;
+    color: var(--gold-light);
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--gold-primary);
+    padding-bottom: 8px;
+    width: 50%;
+}
+
+.details-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-grow: 1;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    padding: 10px 20px;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+/* Auto Animation classes triggered on active scene */
+.scene.active .detail-item {
+    animation: fadeUpItem 0.8s forwards ease-out;
+}
+.scene.active .fade-up-delay-1 { animation-delay: 0.3s; }
+.scene.active .fade-up-delay-2 { animation-delay: 0.7s; }
+.scene.active .fade-up-delay-3 { animation-delay: 1.1s; }
+
+.detail-icon {
+    font-size: 2.2rem;
+    margin-right: 20px;
+    filter: drop-shadow(0 0 5px rgba(255,255,255,0.3));
+}
+
+.detail-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.detail-content .label {
+    font-size: 0.85rem;
+    color: var(--gold-primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 3px;
+}
+
+.detail-content .val {
+    font-size: 1.15rem;
+    font-family: 'Poppins', sans-serif;
+    color: var(--ivory-white);
+}
+
+.detail-content .sub-val {
+    font-size: 0.95rem;
+    color: var(--gold-light);
+}
+
+.boldHighlight {
+    font-family: 'Rozha One', serif !important;
+    font-weight: 600;
+    color: var(--gold-light) !important;
+}
+
+.gold-line-divider {
+    height: 1px;
+    width: 85%;
+    align-self: center;
+    background: linear-gradient(to right, transparent, rgba(212,175,55,0.4), transparent);
+}
+
+.map-action {
+    margin-top: 15px;
+    width: 100%;
+}
+
+.gold-border-button {
+    display: inline-block;
+    padding: 10px 25px;
+    font-family: 'Yatra One', cursive;
+    font-size: 1rem;
+    color: var(--gold-light);
+    border: 1px solid var(--gold-primary);
+    border-radius: 20px;
+    text-decoration: none;
+    background: transparent;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 0 0 rgba(212,175,55,0);
+}
+
+.gold-border-button:hover {
+    background: rgba(212, 175, 55, 0.1);
+    border-color: var(--gold-light);
+    box-shadow: inset 0 0 10px rgba(212, 175, 55, 0.2), 0 0 10px var(--shadow-gold);
+    color: #FFF;
+}
+
+/* 3.3. SCENE 3 ELEMENTS: FINAL EMBLEM & DIYA */
+.closing-panel {
+    justify-content: space-between;
+}
+
+.emblem-container {
+    position: relative;
+    width: 130px;
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: spinSlow 30s infinite linear;
+}
+
+.royal-emblem-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 15px rgba(212,175,55,0.5));
+}
+
+.emblem-overlay-text {
+    position: absolute;
+    z-index: 5;
+    text-align: center;
+    font-family: 'Yatra One', cursive;
+    color: var(--ivory-white);
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-shadow: 0 2px 4px #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 80%;
+    /* Keep text stable while background spins */
+    animation: reverseSpinSlow 30s infinite linear;
+}
+
+.sub-emblem {
+    font-size: 0.65rem;
+    color: var(--gold-light);
+    text-transform: uppercase;
+    margin-top: 2px;
+}
+
+.blessing-msg {
+    font-family: 'Rozha One', serif;
+    font-size: 1.25rem;
+    color: var(--ivory-white);
+    margin: 10px 0;
+    max-width: 85%;
+}
+
+.text-glow {
+    text-shadow: 0 0 10px rgba(255, 235, 150, 0.4), 0 0 20px rgba(212, 175, 55, 0.2);
+}
+
+/* Traditional Diya Display styling */
+.diya-display {
+    position: relative;
+    width: 100px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    margin: 15px 0;
+}
+
+.diya-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 5px 8px rgba(0,0,0,0.6));
+    z-index: 2;
+}
+
+.diya-flame {
+    position: absolute;
+    bottom: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 16px;
+    height: 35px;
+    border-radius: 50% 50% 20% 20% / 60% 60% 40% 40%;
+    background: linear-gradient(to top, #FF8C00 0%, #FFA500 40%, #FFFFE0 80%, #FFF 100%);
+    box-shadow: 0 0 15px #FF8C00, 0 -2px 10px #FFA500;
+    z-index: 3;
+    transform-origin: center bottom;
+    animation: flameFlicker 1.5s infinite alternate ease-in-out;
+}
+
+.flame-core {
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 12px;
+    border-radius: 50%;
+    background: #000080;
+    opacity: 0.3;
+}
+
+.flame-glow {
+    position: absolute;
+    top: -20px;
+    left: -22px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 140, 0, 0.4) 0%, transparent 70%);
+    z-index: 1;
+    pointer-events: none;
+    animation: glowPulse 2s infinite alternate ease-in-out;
+}
+
+.namaste-symbol {
+    font-size: 2.2rem;
+    margin-bottom: 5px;
+    animation: pulseGlow 2.5s infinite;
+}
+
+.cordial-invite {
+    font-family: 'Rozha One', serif;
+    font-size: 1.8rem;
+    color: var(--gold-light);
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.flower-shower-msg {
+    font-size: 0.8rem;
+    color: var(--gold-primary);
+    opacity: 0.85;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* 4. HUD / CONTROLS SYSTEM */
+.cinematic-hud {
+    position: absolute;
+    bottom: 25px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 30;
+    pointer-events: auto;
+}
+
+.hud-btn {
+    width: 44px;
+    height: 44px;
+    background: rgba(26, 3, 5, 0.6);
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    border-radius: 50%;
+    color: var(--gold-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.1rem;
+    backdrop-filter: blur(4px);
+    transition: all 0.3s ease;
+    margin: 0 15px;
+}
+
+.hud-btn:hover {
+    background: var(--bg-maroon);
+    border-color: var(--gold-primary);
+    color: #FFF;
+    transform: scale(1.1);
+}
+
+.hud-btn:active {
+    transform: scale(0.95);
+}
+
+/* Music toggled state icons hide/show */
+#music-toggle.audio-playing .icon-volume-off { display: none; }
+#music-toggle.audio-muted .icon-volume-on { display: none; }
+#music-toggle.audio-muted { border-color: rgba(255, 255, 255, 0.2); color: rgba(255, 255, 255, 0.5); }
+
+#play-pause-toggle.playing .icon-play { display: none; }
+#play-pause-toggle.paused .icon-pause { display: none; }
+
+/* Timeline Indicator */
+.timeline-indicator {
+    width: 150px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+}
+
+#timeline-progress {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(to right, var(--gold-primary), var(--gold-light));
+    border-radius: 2px;
+    transition: width 0.1s linear;
+}
+
+/* Dots Page Indicator */
+.scene-dots {
+    display: flex;
+    margin-left: 20px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    margin: 0 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background: var(--gold-primary);
+    box-shadow: 0 0 8px var(--gold-light);
+    transform: scale(1.3);
+}
+
+/* KEYFRAMES ANIMATIONS */
+
+@keyframes goldShine {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+@keyframes buttonShine {
+    0% { left: -100%; }
+    50% { left: 100%; }
+    100% { left: 100%; }
+}
+
+@keyframes pulseGlow {
+    0%, 100% { transform: scale(1); filter: drop-shadow(0 0 5px var(--shadow-gold)); }
+    50% { transform: scale(1.05); filter: drop-shadow(0 0 15px var(--gold-light)); }
+}
+
+@keyframes pulseText {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 1; text-shadow: 0 0 8px rgba(255, 224, 102, 0.4); }
+}
+
+@keyframes glowPulse {
+    0% { opacity: 0.8; transform: translate(-50%, 0) scale(0.9); }
+    100% { opacity: 1; transform: translate(-50%, 0) scale(1.1); }
+}
+
+@keyframes bellSway {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(4deg); }
+    75% { transform: rotate(-4deg); }
+}
+
+@keyframes spinSlow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes reverseSpinSlow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(-360deg); }
+}
+
+@keyframes flameFlicker {
+    0% { transform: translateX(-50%) scale(1) rotate(-1deg); }
+    25% { transform: translateX(-50%) scale(0.95, 1.05) rotate(1deg); }
+    50% { transform: translateX(-50%) scale(1.05, 0.95) rotate(-2deg); }
+    75% { transform: translateX(-50%) scale(0.98, 1.02) rotate(2deg); }
+    100% { transform: translateX(-50%) scale(1) rotate(-1deg); }
+}
+
+@keyframes fadeUpItem {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVE SCALING */
+@media (max-width: 480px) {
+    .envelope-card {
+        height: 85vh;
+    }
+    .splash-title {
+        font-size: 2.2rem;
+    }
+    .main-invite-title {
+        font-size: 2.2rem;
+    }
+    .firm-name {
+        font-size: 1.5rem;
+    }
+    .inauguration-announce {
+        font-size: 1.1rem;
+    }
+    .invite-msg {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+    .detail-icon {
+        font-size: 1.8rem;
+        margin-right: 15px;
+    }
+    .detail-content .val {
+        font-size: 0.95rem;
+    }
+    .emblem-container {
+        width: 100px;
+        height: 100px;
+    }
+    .emblem-overlay-text {
+        font-size: 0.7rem;
+    }
+    .diya-display {
+        width: 80px;
+        height: 55px;
+    }
+    .diya-flame {
+        bottom: 35px;
+        width: 13px;
+        height: 28px;
+    }
+    .cordial-invite {
+        font-size: 1.4rem;
+    }
+    .timeline-indicator {
+        width: 90px;
+    }
+    .hud-btn {
+        margin: 0 8px;
+    }
+}
+
+/* Additional media query for short screen heights (e.g. landscape or small devices) */
+@media (max-height: 620px) {
+    #scenes-wrapper {
+        height: 90vh;
+        max-height: 400px;
+    }
+    .card-glass-frame {
+        padding: 15px 20px;
+    }
+    .splash-title {
+        font-size: 2rem;
+        margin-bottom: 5px;
+    }
+    .splash-subtitle {
+        margin-bottom: 20px;
+    }
+    .firm-name {
+        font-size: 1.4rem;
+        margin: 5px 0;
+    }
+    .main-invite-title {
+        font-size: 2rem;
+    }
+    .detail-item {
+        padding: 5px 10px;
+    }
+    .detail-icon {
+        font-size: 1.5rem;
+    }
+    .emblem-container {
+        width: 80px;
+        height: 80px;
+    }
+    .diya-display {
+        margin: 5px 0;
+        height: 45px;
+    }
+    .diya-flame {
+        bottom: 28px;
+    }
+    .cordial-invite {
+        font-size: 1.2rem;
+    }
+}
