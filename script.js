@@ -2,7 +2,6 @@
 
 document.addEventListener("DOMContentLoaded", () => {
     // DOM Elements
-    const bgMusic = document.getElementById("bg-music");
     const splashScreen = document.getElementById("splash-screen");
     const openBtn = document.getElementById("open-btn");
     const cinematicContainer = document.getElementById("cinematic-container");
@@ -248,11 +247,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 ytPlayer.playVideo();
                 isPlaying = true;
             } catch (err) {
-                console.warn("Error starting YouTube video, falling back:", err);
-                fallbackPlayAudio();
+                console.warn("Error starting YouTube video:", err);
             }
-        } else {
-            fallbackPlayAudio();
         }
 
         // Trigger temple doors opening after 800ms
@@ -266,15 +262,6 @@ document.addEventListener("DOMContentLoaded", () => {
             // Start the invitation timeline sequence
             startTimeline();
         }, 800);
-    }
-
-    function fallbackPlayAudio() {
-        bgMusic.play().then(() => {
-            isPlaying = true;
-        }).catch(err => {
-            console.log("Autoplay blocked or audio failed. Waiting for interaction.", err);
-            isPlaying = false;
-        });
     }
 
     // Timeline Loop Manager
@@ -420,15 +407,11 @@ document.addEventListener("DOMContentLoaded", () => {
             pauseTimeline();
             if (useYT && ytPlayer) {
                 ytPlayer.pauseVideo();
-            } else {
-                bgMusic.pause();
             }
         } else {
             startTimeline();
             if (useYT && ytPlayer) {
                 ytPlayer.playVideo();
-            } else {
-                bgMusic.play().catch(e => console.log("Audio play blocked", e));
             }
         }
     });
@@ -438,8 +421,6 @@ document.addEventListener("DOMContentLoaded", () => {
         if (isMuted) {
             if (useYT && ytPlayer) {
                 ytPlayer.unMute();
-            } else {
-                bgMusic.muted = false;
             }
             musicToggle.classList.remove("audio-muted");
             musicToggle.classList.add("audio-playing");
@@ -447,8 +428,6 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
             if (useYT && ytPlayer) {
                 ytPlayer.mute();
-            } else {
-                bgMusic.muted = true;
             }
             musicToggle.classList.remove("audio-playing");
             musicToggle.classList.add("audio-muted");

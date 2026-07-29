@@ -871,17 +871,65 @@ body, html {
 
 /* RESPONSIVE SCALING */
 @media (max-width: 480px) {
+    #scenes-wrapper {
+        height: 78vh;
+        margin-bottom: 50px; /* Leave space for bottom HUD */
+    }
+
+    .card-glass-frame {
+        padding: 20px 15px;
+        justify-content: space-around;
+        overflow-y: auto; /* enable vertical scroll if content overflows */
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Custom thin scrollbar for glass frame */
+    .card-glass-frame::-webkit-scrollbar {
+        width: 4px;
+    }
+    .card-glass-frame::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.1);
+        border-radius: 2px;
+    }
+    .card-glass-frame::-webkit-scrollbar-thumb {
+        background: var(--gold-primary);
+        border-radius: 2px;
+    }
+
     .envelope-card {
-        height: 85vh;
+        height: 80vh;
+        padding: 20px 15px;
     }
     .splash-title {
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
+    .splash-subtitle {
+        margin-bottom: 30px;
+    }
+    .shloka {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+    .ganesha-icon {
+        margin-bottom: 15px;
+    }
+    .ganesha-icon svg {
+        width: 60px;
+        height: 72px;
+    }
+    .lotus-motif {
+        margin-bottom: 5px;
+    }
+    .lotus-motif svg {
+        width: 60px;
+    }
+
     .main-invite-title {
         font-size: 2.2rem;
     }
     .firm-name {
         font-size: 1.5rem;
+        margin: 5px 0;
     }
     .inauguration-announce {
         font-size: 1.1rem;
@@ -890,31 +938,60 @@ body, html {
         font-size: 0.85rem;
         line-height: 1.5;
     }
+    .detail-item {
+        padding: 6px 10px;
+    }
     .detail-icon {
-        font-size: 1.8rem;
-        margin-right: 15px;
+        font-size: 1.5rem;
+        margin-right: 12px;
     }
     .detail-content .val {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
     }
+    .detail-content .label {
+        font-size: 0.75rem;
+    }
+    .gold-line-divider {
+        width: 90%;
+    }
+    .map-action {
+        margin-top: 10px;
+    }
+    .gold-border-button {
+        padding: 8px 20px;
+        font-size: 0.9rem;
+    }
+
     .emblem-container {
-        width: 100px;
-        height: 100px;
+        width: 90px;
+        height: 90px;
+        margin-bottom: 5px;
     }
     .emblem-overlay-text {
-        font-size: 0.7rem;
+        font-size: 0.65rem;
+    }
+    .blessing-msg {
+        font-size: 0.95rem;
+        margin: 5px 0;
     }
     .diya-display {
-        width: 80px;
-        height: 55px;
+        margin: 5px 0;
+        height: 45px;
     }
     .diya-flame {
-        bottom: 35px;
-        width: 13px;
-        height: 28px;
+        bottom: 30px;
+        width: 10px;
+        height: 22px;
+    }
+    .namaste-symbol {
+        font-size: 1.6rem;
     }
     .cordial-invite {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
+    }
+    .flower-shower-msg {
+        font-size: 0.7rem;
+        letter-spacing: 1px;
     }
     .timeline-indicator {
         width: 90px;
@@ -923,7 +1000,7 @@ body, html {
         margin: 0 8px;
     }
     .host-details {
-        font-size: 0.8rem;
+        font-size: 0.78rem;
         gap: 4px;
         margin: 5px 0;
     }
@@ -935,48 +1012,53 @@ body, html {
 /* Additional media query for short screen heights (e.g. landscape or small devices) */
 @media (max-height: 620px) {
     #scenes-wrapper {
-        height: 90vh;
+        height: 82vh;
         max-height: 400px;
+        margin-bottom: 45px;
     }
     .card-glass-frame {
-        padding: 15px 20px;
+        padding: 10px 15px;
+        overflow-y: auto;
     }
     .splash-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
         margin-bottom: 5px;
     }
     .splash-subtitle {
-        margin-bottom: 20px;
+        margin-bottom: 15px;
     }
     .firm-name {
-        font-size: 1.4rem;
-        margin: 5px 0;
+        font-size: 1.3rem;
+        margin: 3px 0;
     }
     .main-invite-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
     .detail-item {
-        padding: 5px 10px;
+        padding: 4px 10px;
     }
     .detail-icon {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
     .emblem-container {
-        width: 80px;
-        height: 80px;
+        width: 75px;
+        height: 75px;
     }
     .diya-display {
-        margin: 5px 0;
-        height: 45px;
+        margin: 3px 0;
+        height: 35px;
     }
     .diya-flame {
-        bottom: 28px;
+        bottom: 22px;
+    }
+    .namaste-symbol {
+        font-size: 1.3rem;
     }
     .cordial-invite {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
     .host-details {
-        font-size: 0.72rem;
+        font-size: 0.7rem;
         gap: 2px;
         margin: 2px 0;
     }
